@@ -1,0 +1,16 @@
+<h1>Snacks por Prefijo</h1>
+
+<form method="get">
+    <input type="text" name="prefijo" placeholder="Escribe prefijo" value="{{ prefijo }}">
+    <button type="submit">Buscar</button>
+</form>
+
+<hr>
+
+<ul>
+    {% for snack in snacks %}
+        <li>{{ snack.producto }} - {{ snack.precio_unitario }}</li>
+    {% empty %}
+        <li>No hay resultados</li>
+    {% endfor %}
+</ul>

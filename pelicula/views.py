@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def lista_peliculas(request):
+    return render(request, 'pelicula/lista.html')

@@ -1,0 +1,17 @@
+<h1>Filtro Avanzado</h1>
+
+<form method="get">
+    <input type="text" name="q" placeholder="Nombre contiene...">
+    <input type="number" name="precio" placeholder="Precio mínimo">
+    <button type="submit">Filtrar</button>
+</form>
+
+<hr>
+
+<ul>
+    {% for snack in snacks %}
+        <li>{{ snack.producto }} - {{ snack.precio_unitario }}</li>
+    {% empty %}
+        <li>No hay resultados</li>
+    {% endfor %}
+</ul>

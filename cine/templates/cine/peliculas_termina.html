@@ -1,0 +1,37 @@
+{% extends "cine/base.html" %}
+{% block content %}
+
+<div class="container mt-4">
+    <h2>Películas que terminan con...</h2>
+
+    <form method="get" class="mb-3">
+        <input type="text" name="texto" class="form-control" placeholder="Ingrese últimas letras">
+        <button type="submit" class="btn btn-primary mt-2">Buscar</button>
+    </form>
+
+    {% if peliculas %}
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Título</th>
+                <th>Género</th>
+                <th>Clasificación</th>
+                <th>Duración</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in peliculas %}
+            <tr>
+                <td>{{ p.titulo }}</td>
+                <td>{{ p.genero }}</td>
+                <td>{{ p.clasificacion }}</td>
+                <td>{{ p.duracion_min }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+</div>
+
+{% endblock %}

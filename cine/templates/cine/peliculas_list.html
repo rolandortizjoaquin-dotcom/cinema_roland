@@ -1,0 +1,28 @@
+{% extends "cine/base.html" %}
+
+{% block content %}
+
+<h2 class="mb-4">Listado Completo de Películas</h2>
+
+<table class="table table-striped table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Título</th>
+            <th>Género</th>
+            <th>Clasificación</th>
+            <th>Duración (min)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in peliculas %}
+        <tr>
+            <td>{{ p.titulo }}</td>
+            <td>{{ p.genero }}</td>
+            <td>{{ p.clasificacion }}</td>
+            <td>{{ p.duracion_min }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

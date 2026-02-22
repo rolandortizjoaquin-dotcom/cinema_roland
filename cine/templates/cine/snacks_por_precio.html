@@ -1,0 +1,12 @@
+<h1>Snacks agrupados por precio</h1>
+
+<ul>
+    {% for item in resumen %}
+        <li>
+            Precio: {{ item.precio_unitario }} -
+            Cantidad de snacks: {{ item.total }}
+        </li>
+    {% empty %}
+        <li>No hay datos</li>
+    {% endfor %}
+</ul>

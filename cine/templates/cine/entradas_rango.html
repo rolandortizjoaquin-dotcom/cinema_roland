@@ -1,0 +1,32 @@
+{% extends "cine/base.html" %}
+
+{% block content %}
+<h2>Entradas (Rango 4-7)</h2>
+
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Código</th>
+            <th>Asiento</th>
+            <th>Vendido</th>
+            <th>Función</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for e in entradas %}
+        <tr>
+            <td>{{ e.id }}</td>
+            <td>{{ e.codigo }}</td>
+            <td>{{ e.asiento }}</td>
+            <td>{{ e.vendido }}</td>
+            <td>{{ e.funcion }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No hay suficientes registros</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

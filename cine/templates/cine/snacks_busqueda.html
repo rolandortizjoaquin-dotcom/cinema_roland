@@ -1,0 +1,16 @@
+<h1>Búsqueda de Snacks</h1>
+
+<form method="get">
+    <input type="text" name="q" placeholder="Buscar..." value="{{ texto }}">
+    <button type="submit">Buscar</button>
+</form>
+
+<hr>
+
+<ul>
+    {% for snack in snacks %}
+        <li>{{ snack.producto }} - {{ snack.precio_unitario }}</li>
+    {% empty %}
+        <li>No hay resultados</li>
+    {% endfor %}
+</ul>
